@@ -1,11 +1,13 @@
 @import 'nib'
-@import 'colores'
 @import 'normalize'
+
+fondo = #23252a
 
 *
   box-sizing border-box
 
 body
+  background fondo
   font-family 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
   margin 0
   text-align center
@@ -19,9 +21,6 @@ body
     background-position 0 0
 
 .menu
-  animation bg 120s linear infinite
-  background url(http://francoescamillaoficial.com/assets/img/backgrounds/bg-4.jpg) no-repeat center center
-  background-size 150%
   height 100vh
   position fixed
   width 100vw
@@ -56,10 +55,22 @@ body
           transform translateY(0)
 
   .capa
-    background rgba(11, 13, 19, 0.9)
+    // background rgba(11, 13, 19, 0.9)
     height 100vh
     position relative
     width 100vw
+    
+    &:before
+      animation bg 120s linear infinite
+      background url(http://francoescamillaoficial.com/assets/img/backgrounds/bg-4.jpg) no-repeat center center
+      background-size 150%
+      content ''
+      height 100%
+      left 0
+      opacity .1
+      position absolute
+      top 0
+      width 100%
 
   .contenedorIconoMenu
       height 50px
