@@ -65,13 +65,26 @@ html#html(lang="es")
               .capaItem.centrar
                 img(src="http://francoescamillaoficial.com/assets/img/intro.png")
             .item
-              h4 3
+              ul#scene.scene
+                .layerP.layer1
+                  li.layer.layer1(data-depth="1.00")
+                    img(src="http://clak.casa/tmp/img/cabeza.png")
+                .layerP.layer2
+                  li.layer.layer2(data-depth="0.60")
+                    img(src="http://clak.casa/tmp/img/cuerpo.png")
+                .layerP.layer3
+                  li.layer.layer3(data-depth="0.20")
+                    img(src="http://clak.casa/tmp/img/derecha.png")
+                .layerP.layer4
+                  li.layer.layer4(data-depth="0.40")
+                    img(src="http://clak.casa/tmp/img/izquierda.png")
             .item
               h4 4
             .item
               h4 5
     script(src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js")
     script(src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.min.js")
+    script(src="http://clak.casa/tmp/js/parallax.js")
     script.
       $('.owl-carousel').owlCarousel({
         loop               : true,
@@ -80,3 +93,6 @@ html#html(lang="es")
         autoplayTimeout    : 2000,
         autoplayHoverPause : true
       })
+
+      var scene    = document.getElementById('scene');
+      var parallax = new Parallax(scene);
