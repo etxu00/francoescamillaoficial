@@ -6,6 +6,9 @@ fondo = #23252a
 *
   box-sizing border-box
 
+.off
+  display none
+
 body
   background fondo
   font-family 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
@@ -206,15 +209,40 @@ body
         li:not(:last-child)
           margin 0 0 4rem 0
 
-    .descripcionSecciones
+    .contenedorAreaDerecha
       padding 0
       position absolute
       right calc(50% + 66px)
       top 50%
       transform translate(0, -50%)
       width calc(50% - 104px)
+      
+      .item
+        align-items center
+        display flex
+        justify-content center
+        position relative
+        
+        .capaItem
+          left 0
+          position absolute
+          top 0
+          
+          &.centrar
+            left 50%
+            top 50%
+            transform translate(-50%, -50%)
 
       img
         width 100%
         
 
+// Ajustes de carusel principal
+.contenedorAreaDerecha
+  &:hover
+    .owl-dots
+      opacity 1
+    
+  .owl-dots
+    opacity 0
+    transition opacity .3s ease-in-out .5s
