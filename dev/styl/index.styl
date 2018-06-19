@@ -1,7 +1,9 @@
 @import 'nib'
 @import 'normalize'
 
-fondo = #23252a
+amarillo = #ffd114
+// fondo    = #000000
+fondo    = #23252a
 
 *
   box-sizing border-box
@@ -253,10 +255,46 @@ body
   &:hover
     .owl-dots
       opacity 1
+  
+  .owl-theme
+    .owl-dots
+      .owl-dot
+        position relative
+
+        &.active
+          span
+            background amarillo
+
+        &:hover
+          span:after
+          span:before
+            transform scale(1)
+
+        span
+          &:before
+          &:after
+            content ''
+            height 100%
+            left 0
+            position absolute
+            transform scale(0)
+            transition transform .25s cubic-bezier(0.42, 0, 0.32, 1.49)
+            width 24px
+            z-index -1
+
+          &:after
+            background url(bg-span.png) no-repeat top !important
+            top 0
+          
+          &:before
+            background url(bg-span1.png) no-repeat top !important
+            top 8px
     
   .owl-dots
     opacity 0
     transition opacity .3s ease-in-out .5s
+    
+
 
 // Ajustes de efecto prallax BORRADOR
 
