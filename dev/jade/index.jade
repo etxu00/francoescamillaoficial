@@ -11,12 +11,17 @@ html#html(lang="es")
     meta(name="author" content="etxu00")
     meta(content='http://francoescamillaoficial.com/assets/img/redes.jpg' property='og:image')
 
+    link(rel="icon", type="image/png" href="http://francoescamillaoficial.com/assets/img/favicon.png")
+
     title Franco Escamilla - Sitio Oficial
     link(rel="stylesheet", href="index.css")
-    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:800")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:100:200:300:400:500:600:700:800:900")
     link(rel="stylesheet", href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css")
     link(rel="stylesheet", href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css")
   body
+    section.seccion
+      h2.presentaciones PRÓXIMAS PRESENTACIONES
+      p Las únicas presentaciones oficiales serán las que aparezcan publicadas a continuación, cualquier presentación no anunciada en éste sitio web no esta confirmada. La lista de eventos se actualiza semanalmente.
     #menu.menu
       .capa
         .contenedorIconoMenu
@@ -89,10 +94,34 @@ html#html(lang="es")
       $('.owl-carousel').owlCarousel({
         loop               : true,
         items              : 1,
-        //- autoplay           : true,
+        autoplay           : true,
         autoplayTimeout    : 2000,
         autoplayHoverPause : true
       })
 
       var scene    = document.getElementById('scene');
       var parallax = new Parallax(scene);
+
+      if (window.addEventListener) {  
+        state  = 0
+        konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+
+        window.addEventListener('keydown', function(e) {
+          console.info("e.keyCode: " + e.keyCode)
+          if(e.keyCode == 9) {
+            e.preventDefault()
+            document.querySelector('#menu').classList.add('show')
+
+            window.addEventListener('keyup', function(e) {
+              document.querySelector('#menu').classList.remove('show')
+            })
+          }
+
+          e.keyCode == konami[state] ? state++ : state = 0
+          if(state == 10) konamiCode()
+        }, true)
+      }
+
+      function konamiCode() {
+        console.log("Código konami: ACTIVADO")
+      }
