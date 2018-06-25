@@ -221,18 +221,26 @@ h2
               
             &:hover:before
               opacity 1
+              animation-duration .5s
+              animation-iteration-count 1
+              animation-name bg-explotion
+              animation-timing-function step-end
               
             &:before
-              background url(https://i.pinimg.com/originals/3f/eb/ee/3febeee74dc583e7cba62ebdfa82dc6c.gif) no-repeat center center
+              background-image url(tmp/bg-a-0.png)
+              background-position 0 calc(100% * 0)
+              background-repeat none
+              background-size 100% auto
               content ''
               display block
-              height 108px
-              left 50%
+              height 150px
+              left 6%
               opacity 0
               position absolute
               top 50%
-              transform translate(-50%, -50%)
-              width 268px
+              transform translate(-50%,-50%)
+              width 150px
+              z-index -1
           
             img
               left 0
@@ -347,3 +355,61 @@ h2
 #scene
   width 100%
   height 100%
+
+
+@keyframes bg-explotion
+  0%
+  3.703703704%
+    background-position: 0 calc(100% * -1)
+  7.407407407%
+    background-position: 0 calc(100% * -2)
+  11.11111111%
+    background-position: 0 calc(100% * -3)
+  14.81481481%
+    background-position: 0 calc(100% * -4)
+  18.51851852%
+    background-position: 0 calc(100% * -5)
+  22.22222222%
+    background-position: 0 calc(100% * -6)
+  25.92592593%
+    background-position: 0 calc(100% * -7)
+  29.62962963%
+    background-position: 0 calc(100% * -8)
+  33.33333333%
+    background-position: 0 calc(100% * -9)
+  37.03703704%
+    background-position: 0 calc(100% * -10)
+  40.74074074%
+    background-position: 0 calc(100% * -11)
+  44.44444444%
+    background-position: 0 calc(100% * -12)
+  48.14814815%
+    background-position: 0 calc(100% * -13)
+  51.85185185%
+    background-position: 0 calc(100% * -14)
+  55.55555556%
+    background-position: 0 calc(100% * -15)
+  59.25925926%
+    background-position: 0 calc(100% * -16)
+  62.96296296%
+    background-position: 0 calc(100% * -17)
+  66.66666667%
+    background-position: 0 calc(100% * -18)
+  70.37037037%
+    background-position: 0 calc(100% * -19)
+  74.07407407%
+    background-position: 0 calc(100% * -20)
+  77.77777778%
+    background-position: 0 calc(100% * -21)
+  81.48148148%
+    background-position: 0 calc(100% * -22)
+  85.18518519%
+    background-position: 0 calc(100% * -23)
+  88.88888889%
+    background-position: 0 calc(100% * -24)
+  92.59259259%
+    background-position: 0 calc(100% * -25)
+  96.2962963%
+    background-position: 0 calc(100% * -26)
+  100%
+    background-position: 0 calc(100% * -27)
