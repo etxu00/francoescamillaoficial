@@ -64,6 +64,9 @@ h2
     visibility visible
     transition visibility 0s linear 0s
     
+    .contenedorAreaDerecha
+      opacity 1
+      
     .contenedorIconoMenu
       height 100px
       width 100px
@@ -250,11 +253,13 @@ h2
           margin 0 0 4rem 0
 
     .contenedorAreaDerecha
+      opacity 0
       padding 0
       position absolute
       right calc(50% + 66px)
       top 50%
       transform translate(0, -50%)
+      transition opacity .3s ease-in-out
       width calc(50% - 104px)
       
       .item
